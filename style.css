@@ -1,0 +1,93 @@
+body {
+	font-family: Calibri, sans-serif;
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+tr:nth-of-type(even) {
+	background-color: #ffffff;
+}
+
+tr:nth-of-type(odd) {
+	background-color: #fff2cb;
+}
+
+th {
+	background-color: #ffc000;
+}
+
+th[scope="col-first"] {
+	width: 65px;
+	color: black;
+}
+th[scope="col"] {
+	width: 300px;
+	color: black;
+}
+th[scope="col-root"] {
+	background-color: #ff4343;
+	color: white;
+}
+
+td {
+	text-align: center;
+	height: 75px;
+}
+
+th,
+td {
+	border: 1px solid black;
+	padding: 0;
+	margin: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: auto;
+}
+
+#capture {
+	padding: 15px;
+	background: white;
+	width: 1595px;
+	min-width: 1595px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+}
+
+.radio-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+}
+
+.profesor-input {
+	width: 90%;
+	font-size: 25px;
+}
+
+.predmet-input {
+	width: 90%;
+	font-size: 25px;
+}
+
+.radio-container {
+	font-size: 25px;
+	width: 90%;
+}
+
+div[name="info-container"] {
+	border: 2px solid black;
+	display: none;
+	flex-direction: column;
+	width: 97%;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	gap: 10px 0px;
+}

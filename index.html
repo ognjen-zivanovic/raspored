@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div style="display: flex; flex-direction: row; max-width: 1900px">
+			<div id="capture">
+				<table cellspacing="0">
+					<thead>
+						<tr>
+							<th id="root-header" scope="col-root" colspan="6">Obe grupe</th>
+						</tr>
+						<tr>
+							<th scope="col-first">#</th>
+							<th scope="col">Понедељак</th>
+							<th scope="col">Уторак</th>
+							<th scope="col">Среда</th>
+							<th scope="col">Четвртак</th>
+							<th scope="col">Петак</th>
+						</tr>
+					</thead>
+					<tbody id="table"></tbody>
+				</table>
+			</div>
+			<div
+				style="
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					max-width: 300px;
+					width: 300px;
+					overflow: hidden;
+					gap: 10px 0px;
+					padding-top: 50px;
+				"
+			>
+				<div style="width: 100%">
+					<div style="font-size: 25px; font-weight: lighter; color: gray">
+						Izaberi grupu:
+					</div>
+					<div class="radio-container">
+						<input
+							type="radio"
+							id="radio-obe-grupe"
+							name="grupa-picker"
+							checked="true"
+						/>
+						<label for="radio-obe-grupe">Obe grupe</label>
+						<input type="radio" id="radio-prva-grupa" name="grupa-picker" />
+						<label for="radio-prva-grupa">A</label>
+						<input type="radio" id="radio-druga-grupa" name="grupa-picker" />
+						<label for="radio-druga-grupa">B</label>
+					</div>
+				</div>
+
+				<div name="info-container"></div>
+				<div name="info-container"></div>
+				<div name="info-container"></div>
+
+				<button id="capture-button" style="font-size: 20px">Preuzmi sliku rasporeda</button>
+
+				<div
+					style="
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						padding: 10px;
+						font-size: 20px;
+					"
+				>
+					<input type="checkbox" id="checkbox-1" style="height: 20px; width: 20px" />
+					Prikazi imena profesora
+				</div>
+				<script type="module" src="/main.js"></script>
+			</div>
+		</div>
+	</body>
+</html>
