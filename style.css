@@ -5,16 +5,37 @@ body {
 	padding: 0;
 }
 
+:root {
+	--primary-color: #ff0000;
+	--header-text-color-oba: #ffffff;
+	--header-background-color-oba: #d3d3d3;
+
+	--header-text-color-a: #ffffff;
+	--header-background-color-a: #003fff;
+
+	--header-text-color-b: #ffffff;
+	--header-background-color-b: #ff4343;
+
+	--odd-cells-background-color: #fff2cb;
+	--even-cells-background-color: #ffffff;
+
+	--header-days-background-color: #ffc000;
+}
+
 tr:nth-of-type(even) {
-	background-color: #ffffff;
+	background-color: var(--even-cells-background-color);
 }
 
 tr:nth-of-type(odd) {
-	background-color: #fff2cb;
+	background-color: var(--odd-cells-background-color);
+}
+
+tr > td:hover {
+	background-image: linear-gradient(rgb(0 0 0/15%) 0 0);
 }
 
 th {
-	background-color: #ffc000;
+	background-color: var(--header-days-background-color);
 }
 
 th[scope="col-first"] {
@@ -26,8 +47,8 @@ th[scope="col"] {
 	color: black;
 }
 th[scope="col-root"] {
-	background-color: #ff4343;
-	color: white;
+	color: var(--header-text-color-oba);
+	background-color: var(--header-background-color-oba);
 }
 
 td {
