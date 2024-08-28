@@ -1,6 +1,7 @@
 import { setHeader, filterValue } from "./header";
 import { resetInfoContainers, showInfo } from "./infoContainers";
-import { raspored } from "./raspored";
+import { getOdeljenje, raspored } from "./raspored";
+import { setRaspored } from "./storage";
 
 const table = document.getElementById("table");
 const checkbox = document.getElementById("checkbox-1");
@@ -23,6 +24,9 @@ function resetTable() {
 }
 
 export function generateTable() {
+	const odeljenje = getOdeljenje();
+	setRaspored(odeljenje, raspored);
+
 	document.getElementById("radio-obe-grupe").onclick = () => {
 		setHeader("");
 		generateTable();
@@ -39,11 +43,16 @@ export function generateTable() {
 	resetTable();
 
 	for (let i = 0; i <= 14; i++) {
+		if (!(i in raspored)) {
+			continue;
+		}
 		const row = document.createElement("tr");
+		table.appendChild(row);
+
 		const numberCell = row.insertCell();
 		const brojCasa = i <= 7 ? i : i - 7;
 		numberCell.innerHTML = brojCasa;
-		var exists = false;
+
 		for (let j = 1; j <= 5; j++) {
 			const cell = row.insertCell();
 			const casovi = raspored[i][j];
@@ -59,13 +68,9 @@ export function generateTable() {
 					cell.innerHTML += getValue(cas);
 
 					cell.addEventListener("click", () => {
-						showInfo(cas, index);
+						showInfo(cas, index, casovi);
 					});
 				});
-				exists = true;
-			}
-			if (exists) {
-				table.appendChild(row);
 			}
 		}
 	}

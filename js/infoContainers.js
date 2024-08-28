@@ -62,7 +62,7 @@ function addRadio(cas, radioContainer, index, id, name, labelString, clickValue)
 	radioContainer.appendChild(radioLabel);
 }
 
-export function showInfo(cas, index) {
+export function showInfo(cas, index, casovi) {
 	console.log(index);
 	const infoContainer = getInfoContainer(index);
 
@@ -70,6 +70,17 @@ export function showInfo(cas, index) {
 	addInput(infoContainer, cas, "predmet-input", 0);
 
 	addRadios(infoContainer, cas, index);
+
+	const deleteButton = document.createElement("button");
+	deleteButton.innerHTML = "Delete";
+	deleteButton.onclick = () => {
+		casovi.splice(index, 1);
+		console.log(casovi);
+		generateTable();
+		resetInfoContainers();
+	};
+
+	infoContainer.appendChild(deleteButton);
 }
 
 export function resetInfoContainers() {

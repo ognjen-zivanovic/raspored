@@ -1,3 +1,5 @@
+import { getColors, setColors } from "./storage";
+
 const colorPickers = document.getElementById("color-pickers");
 
 // stolen from https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
@@ -30,6 +32,20 @@ var colors = [
 	["--even-cells-background-color", "#ffffff", "Boja 2"],
 ];
 
+export function loadColors() {
+	const cachedColors = getColors();
+	if (cachedColors != null) {
+		colors = cachedColors;
+	}
+
+	for (let i = 0; i < colors.length; i++) {
+		const cssName = colors[i][0];
+		const colorValue = colors[i][1];
+
+		document.documentElement.style.setProperty(cssName, colorValue);
+	}
+}
+
 function addColorPicker(color, index) {
 	const cssName = color[0];
 	const colorValue = color[1];
@@ -51,7 +67,7 @@ function addColorPicker(color, index) {
 	colorInput.onchange = () => {
 		document.documentElement.style.setProperty(cssName, colorInput.value);
 		color[1] = colorInput.value;
-		console.log(colors);
+		setColors(colors);
 	};
 	colorPickers.appendChild(colorInput);
 

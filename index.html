@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div style="display: flex; flex-direction: row; max-width: 1900px">
+		<div style="display: flex; flex-direction: row; max-width: 1900px; padding-top: 20px">
 			<div id="capture">
 				<table cellspacing="0">
 					<thead>
@@ -28,42 +28,35 @@
 					<tbody id="table"></tbody>
 				</table>
 			</div>
-			<div
-				style="
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					max-width: 300px;
-					width: 300px;
-					overflow: hidden;
-					gap: 10px 0px;
-					padding-top: 50px;
-				"
-			>
+			<div id="toolbar">
 				<div style="width: 100%">
 					<div style="font-size: 25px; font-weight: lighter; color: gray">
 						Izaberi grupu:
 					</div>
 					<div class="radio-container">
-						<input
-							type="radio"
-							id="radio-obe-grupe"
-							name="grupa-picker"
-							checked="true"
-						/>
-						<label for="radio-obe-grupe">Obe grupe</label>
-						<input type="radio" id="radio-prva-grupa" name="grupa-picker" />
-						<label for="radio-prva-grupa">A</label>
-						<input type="radio" id="radio-druga-grupa" name="grupa-picker" />
-						<label for="radio-druga-grupa">B</label>
+						<div class="radio-option">
+							<input
+								type="radio"
+								id="radio-obe-grupe"
+								name="grupa-picker"
+								checked="true"
+							/>
+							<label for="radio-obe-grupe">Obe grupe</label>
+						</div>
+						<div class="radio-option">
+							<input type="radio" id="radio-prva-grupa" name="grupa-picker" />
+							<label for="radio-prva-grupa">A</label>
+						</div>
+						<div class="radio-option">
+							<input type="radio" id="radio-druga-grupa" name="grupa-picker" />
+							<label for="radio-druga-grupa">B</label>
+						</div>
 					</div>
 				</div>
 
 				<div name="info-container"></div>
 				<div name="info-container"></div>
 				<div name="info-container"></div>
-
-				<button id="capture-button" style="font-size: 20px">Preuzmi sliku rasporeda</button>
 
 				<div
 					style="
@@ -78,7 +71,51 @@
 					Prikazi imena profesora
 				</div>
 				<div id="color-pickers"></div>
+				<button
+					id="capture-button"
+					style="
+						font-size: 20px;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+					"
+				>
+					<svg
+						class="w-6 h-6 text-gray-800 dark:text-white"
+						aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="none"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 15v2a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-2m-8 1V4m0 12-4-4m4 4 4-4"
+						/>
+					</svg>
+
+					Preuzmi sliku rasporeda
+				</button>
+
+				<input type="file" id="input-file" accept=".xls*" />
+
 				<script type="module" src="/js/main.js"></script>
+				<button id="button-load">Lets go</button>
+
+				<input type="text" id="input-odeljenje" value="4/6" />
+
+				<button
+					onclick="
+					localStorage.clear();
+				"
+				>
+					AAAAAAAAAAAAAAAAAAAAAAAA
+				</button>
 			</div>
 		</div>
 	</body>

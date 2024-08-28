@@ -53,7 +53,7 @@ th[scope="col-root"] {
 
 td {
 	text-align: center;
-	height: 75px;
+	height: 45px;
 }
 
 th,
@@ -111,4 +111,43 @@ div[name="info-container"] {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	gap: 10px 0px;
+	border-radius: 7px;
+	background-color: white;
+}
+
+.radio-option:has(input:checked) {
+	background-color: blue;
+	color: white;
+}
+
+.radio-option {
+	padding: 2px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 7px;
+}
+
+.radio-option > label {
+	user-select: none;
+}
+
+input[type="radio"] {
+	margin: 0;
+}
+
+#toolbar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 300px;
+	width: 300px;
+	overflow: hidden;
+	gap: 10px 0px;
+	margin-top: 20px;
+	padding: 5px;
+	background-color: rgb(236, 236, 236);
+	border-radius: 12px;
+	overflow: hidden;
 }
