@@ -1,19 +1,7 @@
-var headerTextColors = {
-	"": "white",
-	A: "white",
-	B: "white",
-};
-
 var headerNames = {
 	"": "Obe grupe",
 	A: "Група A",
 	B: "Група B",
-};
-
-var headerBgColors = {
-	"": "#d3d3d3",
-	A: "#003fff",
-	B: "#ff4343",
 };
 
 const rootHeader = document.getElementById("root-header");
