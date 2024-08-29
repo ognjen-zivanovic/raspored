@@ -6,28 +6,33 @@ body {
 }
 
 :root {
-	--primary-color: #ff0000;
-	--header-text-color-oba: #ffffff;
-	--header-background-color-oba: #d3d3d3;
+	--header-color-oba: #ffffff;
+	--header-color-oba-bg: #d3d3d3;
 
-	--header-text-color-a: #ffffff;
-	--header-background-color-a: #003fff;
+	--header-color-a: #ffffff;
+	--header-color-a-bg: #003fff;
 
-	--header-text-color-b: #ffffff;
-	--header-background-color-b: #ff4343;
+	--header-color-b: #ffffff;
+	--header-color-b-bg: #ff4343;
 
-	--odd-cells-background-color: #fff2cb;
-	--even-cells-background-color: #ffffff;
+	--odd-cells-color: #000000;
+	--odd-cells-color-bg: #fff2cb;
 
-	--header-days-background-color: #ffc000;
+	--even-cells-color: #000000;
+	--even-cells-color-bg: #ffffff;
+
+	--header-days-color: #000000;
+	--header-days-color-bg: #ffc000;
 }
 
 tr:nth-of-type(even) {
-	background-color: var(--even-cells-background-color);
+	background-color: var(--even-cells-color-bg);
+	color: var(--even-cells-color);
 }
 
 tr:nth-of-type(odd) {
-	background-color: var(--odd-cells-background-color);
+	background-color: var(--odd-cells-color-bg);
+	color: var(--odd-cells-color);
 }
 
 tr > td:hover {
@@ -35,25 +40,24 @@ tr > td:hover {
 }
 
 th {
-	background-color: var(--header-days-background-color);
+	background-color: var(--header-days-color-bg);
+	color: var(--header-days-color);
 }
 
 th[scope="col-first"] {
 	width: 65px;
-	color: black;
 }
 th[scope="col"] {
 	width: 300px;
-	color: black;
 }
 th[scope="col-root"] {
-	color: var(--header-text-color-oba);
-	background-color: var(--header-background-color-oba);
+	color: var(--header-color-oba);
+	background-color: var(--header-color-oba-bg);
 }
 
 td {
 	text-align: center;
-	height: 45px;
+	height: 75px;
 }
 
 th,
@@ -72,8 +76,8 @@ table {
 #capture {
 	padding: 15px;
 	background: white;
-	width: 1595px;
-	min-width: 1595px;
+	/* width: 1595px;
+	min-width: 1595px; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -155,7 +159,7 @@ input[type="radio"] {
 }
 
 .radio-option:has(input:checked) {
-	background-color: #fff2cb;
+	background-color: #ffc000;
 }
 
 .radio-option {
@@ -220,8 +224,7 @@ input[type="radio"] {
 .color-container {
 	display: flex;
 	flex-direction: row;
-
-	justify-content: space-between;
+	gap: 10px;
 }
 
 .toolbar-checkbox {
@@ -230,4 +233,17 @@ input[type="radio"] {
 	align-items: center;
 	font-size: 20px;
 	align-self: self-start;
+}
+
+#color-pickers {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 10px;
+}
+
+#reset-colors-button {
+	width: 70%;
+	font-size: 18px;
+	align-self: center;
 }

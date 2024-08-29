@@ -50,7 +50,12 @@ export function generateTable() {
 		table.appendChild(row);
 
 		const numberCell = row.insertCell();
-		const brojCasa = i <= 7 ? i : i - 7;
+		var brojCasa = i;
+		if (odeljenje[0] == "1" || odeljenje[0] == "3") {
+			if (i <= 7) brojCasa -= 8;
+			else brojCasa -= 7;
+		}
+
 		numberCell.innerHTML = brojCasa;
 
 		for (let j = 1; j <= 5; j++) {

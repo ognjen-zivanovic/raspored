@@ -34,8 +34,8 @@ export function setHeader(c) {
 
 	var s = c == "" ? "oba" : c.toLowerCase();
 
-	rootHeader.style.color = "var(--header-text-color-" + s + ")";
-	rootHeader.style.backgroundColor = "var(--header-background-color-" + s + ")";
+	rootHeader.style.color = "var(--header-color-" + s + ")";
+	rootHeader.style.backgroundColor = "var(--header-color-" + s + "-bg)";
 
 	rootHeader.innerHTML = headerNames[c];
 }
