@@ -76,8 +76,8 @@ table {
 #capture {
 	padding: 15px;
 	background: white;
-	/* width: 1595px;
-	min-width: 1595px; */
+	width: 1595px;
+	min-width: 1595px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
