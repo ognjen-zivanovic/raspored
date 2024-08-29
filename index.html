@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div style="display: flex; flex-direction: row; max-width: 1900px; padding-top: 20px">
+		<div id="root-container">
 			<div id="capture">
 				<table cellspacing="0">
 					<thead>
@@ -30,93 +30,71 @@
 			</div>
 			<div id="toolbar">
 				<div style="width: 100%">
-					<div style="font-size: 25px; font-weight: lighter; color: gray">
+					<div style="font-size: 20px; line-height: 25px; font-weight: 100; color: gray">
 						Izaberi grupu:
 					</div>
+
 					<div class="radio-container">
-						<div class="radio-option">
-							<input
-								type="radio"
-								id="radio-obe-grupe"
-								name="grupa-picker"
-								checked="true"
-							/>
-							<label for="radio-obe-grupe">Obe grupe</label>
-						</div>
-						<div class="radio-option">
-							<input type="radio" id="radio-prva-grupa" name="grupa-picker" />
-							<label for="radio-prva-grupa">A</label>
-						</div>
-						<div class="radio-option">
-							<input type="radio" id="radio-druga-grupa" name="grupa-picker" />
-							<label for="radio-druga-grupa">B</label>
-						</div>
+						<label class="radio-option" for="r-obe">
+							<input type="radio" id="r-obe" name="grupa-picker" checked="true" />
+							Obe</label
+						>
+
+						<label class="radio-option" for="r-1">
+							<input type="radio" id="r-1" name="grupa-picker" />
+							A</label
+						>
+						<label class="radio-option" for="r-2">
+							<input type="radio" id="r-2" name="grupa-picker" />
+							B</label
+						>
 					</div>
 				</div>
 
-				<div name="info-container"></div>
-				<div name="info-container"></div>
-				<div name="info-container"></div>
-
-				<div
-					style="
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-						padding: 10px;
-						font-size: 20px;
-					"
-				>
-					<input type="checkbox" id="checkbox-1" style="height: 20px; width: 20px" />
+				<div class="toolbar-checkbox">
+					<input
+						type="checkbox"
+						id="checkbox-imena-profesora"
+						style="height: 20px; width: 20px"
+					/>
 					Prikazi imena profesora
 				</div>
-				<div id="color-pickers"></div>
-				<button
-					id="capture-button"
-					style="
-						font-size: 20px;
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-						justify-content: space-between;
-					"
-				>
-					<svg
-						class="w-6 h-6 text-gray-800 dark:text-white"
-						aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						fill="none"
-						viewBox="0 0 24 24"
-					>
-						<path
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M4 15v2a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-2m-8 1V4m0 12-4-4m4 4 4-4"
-						/>
-					</svg>
+				<div name="info-container"></div>
+				<div name="info-container"></div>
+				<div name="info-container"></div>
 
+				<div class="toolbar-checkbox">
+					<input
+						type="checkbox"
+						checked="true"
+						id="checkbox-header-tabele"
+						style="height: 20px; width: 20px"
+					/>
+					Prikazi header tabele
+				</div>
+
+				<details>
+					<summary>Colors</summary>
+					<div id="color-pickers"></div>
+				</details>
+
+				<input type="text" id="input-odeljenje" value="4/6" class="toolbar-input" />
+
+				<button id="capture-button" class="toolbar-button">
+					<img src="/download.svg" alt="capture" />
 					Preuzmi sliku rasporeda
 				</button>
 
-				<input type="file" id="input-file" accept=".xls*" />
-
-				<script type="module" src="/js/main.js"></script>
-				<button id="button-load">Lets go</button>
-
-				<input type="text" id="input-odeljenje" value="4/6" />
-
-				<button
-					onclick="
-					localStorage.clear();
-				"
-				>
-					AAAAAAAAAAAAAAAAAAAAAAAA
+				<button id="input-file-button" class="toolbar-button">
+					<img src="/file.svg" alt="file" />
+					Izaberi datoteku
 				</button>
+				<input type="file" id="input-file" accept=".xls*" style="display: none" />
+
+				<button id="button-clear" class="toolbar-button">Clear local storage</button>
 			</div>
 		</div>
+		<script type="module" src="/js/main.js"></script>
+		<script type="module" src="/js/svg.js"></script>
 	</body>
 </html>

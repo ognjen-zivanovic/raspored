@@ -1,5 +1,11 @@
 import html2canvas from "html2canvas";
 
+const chooseFileButton = document.getElementById("input-file-button");
+
+chooseFileButton.onclick = () => {
+	document.getElementById("input-file").click();
+};
+
 export function capture() {
 	html2canvas(document.querySelector("#capture"), {
 		scale: 2,

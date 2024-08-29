@@ -18,7 +18,7 @@ function rgbToHex(r, g, b) {
 	return "#" + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
 }
 
-var colors = [
+var defaultColors = [
 	["--header-background-color-oba", "#d3d3d3", "Obe grupe header pozadina"],
 	["--header-text-color-oba", "#ffffff", "Obe grupe header tekst"],
 	["--header-background-color-a", "#003fff", "Grupa A header pozadina"],
@@ -31,6 +31,8 @@ var colors = [
 	["--odd-cells-background-color", "#fff2cb", "Boja 1"],
 	["--even-cells-background-color", "#ffffff", "Boja 2"],
 ];
+
+var colors = defaultColors;
 
 export function loadColors() {
 	const cachedColors = getColors();
@@ -53,11 +55,13 @@ function addColorPicker(color, index) {
 
 	const pickerName = "picker " + index;
 
+	const colorContainer = document.createElement("div");
+	colorContainer.className = "color-container";
+
 	const colorLabel = document.createElement("label");
 	colorLabel.innerHTML = colorText;
 	colorLabel.style.fontSize = "15px";
 	colorLabel.htmlFor = pickerName;
-	colorPickers.appendChild(colorLabel);
 
 	const colorInput = document.createElement("input");
 	colorInput.type = "color";
@@ -69,14 +73,30 @@ function addColorPicker(color, index) {
 		color[1] = colorInput.value;
 		setColors(colors);
 	};
-	colorPickers.appendChild(colorInput);
 
-	const lineBreak = document.createElement("br");
-	colorPickers.appendChild(lineBreak);
+	colorContainer.appendChild(colorLabel);
+	colorContainer.appendChild(colorInput);
+
+	colorPickers.appendChild(colorContainer);
+}
+
+function addClearColorsButton() {
+	const clearColorsButton = document.createElement("button");
+
+	clearColorsButton.innerHTML = "Clear colors";
+	clearColorsButton.onclick = () => {
+		colors = defaultColors;
+		setColors(colors);
+		location.reload();
+	};
+
+	colorPickers.appendChild(clearColorsButton);
 }
 
 export function addColorPickers() {
 	colors.forEach((color, index) => {
 		addColorPicker(color, index);
 	});
+
+	addClearColorsButton();
 }

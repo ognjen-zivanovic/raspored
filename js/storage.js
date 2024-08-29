@@ -2,6 +2,12 @@ import { setProfesori, getProfesori } from "./data/profesori";
 import { setPredmeti, getPredmeti } from "./data/predmeti";
 import { setCasovi, getCasovi } from "./data/casovi";
 
+const buttonClear = document.getElementById("button-clear");
+buttonClear.onclick = () => {
+	localStorage.clear();
+	location.reload();
+};
+
 export function loadFromLocalStorage() {
 	const profesori = JSON.parse(localStorage.getItem("profesori"));
 	const predmeti = JSON.parse(localStorage.getItem("predmeti"));

@@ -10,7 +10,6 @@ export var raspored = {};
 var offset_x = 5;
 var offset_y = 3;
 
-const loadButton = document.getElementById("button-load");
 const inputFile = document.getElementById("input-file");
 const inputOdeljenje = document.getElementById("input-odeljenje");
 

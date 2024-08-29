@@ -31,7 +31,7 @@ function getRadioContainer() {
 function addRadios(infoContainer, cas, index) {
 	const radioContainer = getRadioContainer();
 
-	addRadio(cas, radioContainer, index, "radio-obe-grupe", "grupa-picker", "Obe grupe", "");
+	addRadio(cas, radioContainer, index, "radio-obe-grupe", "grupa-picker", "Obe", "");
 
 	addRadio(cas, radioContainer, index, "radio-prva-grupa", "grupa-picker", "A", "A");
 
@@ -44,21 +44,23 @@ function addRadio(cas, radioContainer, index, id, name, labelString, clickValue)
 	id += " " + index;
 	name += " " + index;
 
-	const radioObe = document.createElement("input");
-	radioObe.type = "radio";
-	radioObe.id = id;
-	radioObe.name = name;
-	radioObe.checked = cas[2] == clickValue;
-	radioObe.onclick = () => {
+	const radioElement = document.createElement("input");
+	radioElement.type = "radio";
+	radioElement.id = id;
+	radioElement.name = name;
+	radioElement.checked = cas[2] == clickValue;
+	radioElement.onclick = () => {
 		cas[2] = clickValue;
 		generateTable();
 	};
 
 	const radioLabel = document.createElement("label");
+	radioLabel.className = "radio-option";
 	radioLabel.innerHTML = labelString;
 	radioLabel.htmlFor = id;
 
-	radioContainer.appendChild(radioObe);
+	radioLabel.appendChild(radioElement);
+
 	radioContainer.appendChild(radioLabel);
 }
 
@@ -72,6 +74,7 @@ export function showInfo(cas, index, casovi) {
 	addRadios(infoContainer, cas, index);
 
 	const deleteButton = document.createElement("button");
+	deleteButton.className = "delete-button";
 	deleteButton.innerHTML = "Delete";
 	deleteButton.onclick = () => {
 		casovi.splice(index, 1);

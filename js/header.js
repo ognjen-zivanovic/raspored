@@ -20,6 +20,15 @@ const rootHeader = document.getElementById("root-header");
 
 export var filterValue = "";
 
+const checkboxHeader = document.getElementById("checkbox-header-tabele");
+checkboxHeader.onclick = () => {
+	if (checkboxHeader.checked) {
+		rootHeader.style.display = "";
+	} else {
+		rootHeader.style.display = "none";
+	}
+};
+
 export function setHeader(c) {
 	filterValue = c;
 

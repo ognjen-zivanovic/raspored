@@ -4,7 +4,7 @@ import { getOdeljenje, raspored } from "./raspored";
 import { setRaspored } from "./storage";
 
 const table = document.getElementById("table");
-const checkbox = document.getElementById("checkbox-1");
+const checkbox = document.getElementById("checkbox-imena-profesora");
 checkbox.onclick = () => {
 	generateTable();
 };
@@ -27,15 +27,15 @@ export function generateTable() {
 	const odeljenje = getOdeljenje();
 	setRaspored(odeljenje, raspored);
 
-	document.getElementById("radio-obe-grupe").onclick = () => {
+	document.getElementById("r-obe").onclick = () => {
 		setHeader("");
 		generateTable();
 	};
-	document.getElementById("radio-prva-grupa").onclick = () => {
+	document.getElementById("r-1").onclick = () => {
 		setHeader("A");
 		generateTable();
 	};
-	document.getElementById("radio-druga-grupa").onclick = () => {
+	document.getElementById("r-2").onclick = () => {
 		setHeader("B");
 		generateTable();
 	};
