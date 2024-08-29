@@ -65,7 +65,6 @@ function addRadio(cas, radioContainer, index, id, name, labelString, clickValue)
 }
 
 export function showInfo(cas, index, casovi) {
-	console.log(index);
 	const infoContainer = getInfoContainer(index);
 
 	addInput(infoContainer, cas, "profesor-input", 1);
@@ -78,7 +77,6 @@ export function showInfo(cas, index, casovi) {
 	deleteButton.innerHTML = "Delete";
 	deleteButton.onclick = () => {
 		casovi.splice(index, 1);
-		console.log(casovi);
 		generateTable();
 		resetInfoContainers();
 	};

@@ -42,9 +42,6 @@ export function generateCasovi(rows) {
 	var predmeti = Array(r).fill("");
 	var casovi = {};
 
-	console.log(profesori);
-	console.log(predmeti);
-
 	for (var i = 0; i < r; i++) {
 		for (var j = 0; j < c; j++) {
 			var val = rows[i][j];
@@ -65,12 +62,8 @@ export function generateCasovi(rows) {
 				}
 				if (i >= offset_y && j >= offset_x && j < offset_x + 5 * 14) {
 					if (val != "ДЕЖ.") {
-						//console.log(i, j);
-						//console.log(val);
 						val = val.split("/");
 						val[1] = val[1].split(",");
-						console.log(val);
-						//val[1] = [list(el) for el in val[1]];
 
 						for (var el of val[1]) {
 							var mod = "";

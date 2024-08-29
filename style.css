@@ -247,3 +247,8 @@ input[type="radio"] {
 	font-size: 18px;
 	align-self: center;
 }
+
+.toolbar-checkbox > input {
+	height: 20px;
+	width: 20px;
+}

@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Vite App</title>
+		<title>Raspored casova kreator</title>
 
 		<link rel="stylesheet" href="style.css" />
 	</head>
@@ -37,39 +37,33 @@
 					<div class="radio-container">
 						<label class="radio-option" for="r-obe">
 							<input type="radio" id="r-obe" name="grupa-picker" checked="true" />
-							Obe</label
-						>
+							Obe
+						</label>
 
 						<label class="radio-option" for="r-1">
 							<input type="radio" id="r-1" name="grupa-picker" />
-							A</label
-						>
+							A
+						</label>
 						<label class="radio-option" for="r-2">
 							<input type="radio" id="r-2" name="grupa-picker" />
-							B</label
-						>
+							B
+						</label>
 					</div>
 				</div>
 
 				<div class="toolbar-checkbox">
-					<input
-						type="checkbox"
-						id="checkbox-imena-profesora"
-						style="height: 20px; width: 20px"
-					/>
+					<input type="checkbox" id="checkbox-imena-profesora" />
 					Prikazi imena profesora
 				</div>
+
+				<div name="info-container"></div>
+				<div name="info-container"></div>
 				<div name="info-container"></div>
 				<div name="info-container"></div>
 				<div name="info-container"></div>
 
 				<div class="toolbar-checkbox">
-					<input
-						type="checkbox"
-						checked="true"
-						id="checkbox-header-tabele"
-						style="height: 20px; width: 20px"
-					/>
+					<input type="checkbox" checked="true" id="checkbox-header-tabele" />
 					Prikazi header tabele
 				</div>
 
@@ -94,7 +88,7 @@
 				<button id="button-clear" class="toolbar-button">Clear local storage</button>
 			</div>
 		</div>
+
 		<script type="module" src="/js/main.js"></script>
-		<script type="module" src="/js/svg.js"></script>
 	</body>
 </html>
