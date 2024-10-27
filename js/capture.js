@@ -41,5 +41,5 @@ captureButton.onclick = () => {
 	// SetHeaderVisible(true);
 	// capture("-b");
 
-	capture();
+	capture("-" + Math.random().toString(36).substring(3, 6));
 };

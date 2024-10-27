@@ -1,0 +1,21 @@
+{
+  "hash": "6ecdb21a",
+  "configHash": "06b08f30",
+  "lockfileHash": "b649845d",
+  "browserHash": "5690e7b1",
+  "optimized": {
+    "read-excel-file": {
+      "src": "../../node_modules/read-excel-file/index.js",
+      "file": "read-excel-file.js",
+      "fileHash": "02d65312",
+      "needsInterop": false
+    },
+    "html2canvas": {
+      "src": "../../node_modules/html2canvas/dist/html2canvas.esm.js",
+      "file": "html2canvas.js",
+      "fileHash": "b598e0a3",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}
