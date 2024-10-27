@@ -22,27 +22,24 @@ export function capture(id = "") {
 const captureButton = document.getElementById("capture-button");
 
 captureButton.onclick = () => {
-	setHeader("");
-	generateTable();
-	SetHeaderVisible(false);
-	capture("-oba-bez");
+	// setHeader("");
+	// generateTable();
+	// SetHeaderVisible(false);
+	// capture("-oba-bez");
+	// SetHeaderVisible(true);
+	// capture("-oba");
+	// setHeader("A");
+	// generateTable();
+	// SetHeaderVisible(false);
+	// capture("-a-bez");
+	// SetHeaderVisible(true);
+	// capture("-a");
+	// setHeader("B");
+	// generateTable();
+	// SetHeaderVisible(false);
+	// capture("-b-bez");
+	// SetHeaderVisible(true);
+	// capture("-b");
 
-	SetHeaderVisible(true);
-	capture("-oba");
-
-	setHeader("A");
-	generateTable();
-	SetHeaderVisible(false);
-	capture("-a-bez");
-
-	SetHeaderVisible(true);
-	capture("-a");
-
-	setHeader("B");
-	generateTable();
-	SetHeaderVisible(false);
-	capture("-b-bez");
-
-	SetHeaderVisible(true);
-	capture("-b");
+	capture();
 };

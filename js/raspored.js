@@ -29,7 +29,7 @@ inputFile.addEventListener("change", () => {
 	readXlsxFile(inputFile.files[0]).then((rows) => {
 		clearLocalStorage();
 		generateCasovi(rows);
-		generateRaspored();
+		generateRaspored(odeljenje);
 		generateTable();
 	});
 });

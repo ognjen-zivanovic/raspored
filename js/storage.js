@@ -1,6 +1,7 @@
 import { setProfesori, getProfesori } from "./data/profesori";
 import { setPredmeti, getPredmeti } from "./data/predmeti";
 import { setCasovi, getCasovi } from "./data/casovi";
+import { defaultRaspored, defaultCasovi, defaultPredmeti, defaultProfesori } from "./data/default";
 
 const buttonClear = document.getElementById("button-clear");
 buttonClear.onclick = () => {
@@ -14,8 +15,13 @@ export function loadFromLocalStorage() {
 	const casovi = JSON.parse(localStorage.getItem("casovi"));
 
 	if (profesori != null) setProfesori(profesori);
+	else setProfesori(defaultProfesori);
+
 	if (predmeti != null) setPredmeti(predmeti);
+	else setPredmeti(defaultPredmeti);
+
 	if (casovi != null) setCasovi(casovi);
+	else setCasovi(defaultCasovi);
 }
 
 export function saveToLocalStorage() {
@@ -39,7 +45,12 @@ export function getColors() {
 }
 
 export function getRaspored(odeljenje) {
-	return JSON.parse(localStorage.getItem("raspored-" + odeljenje));
+	const odeljenjeRaspored = JSON.parse(localStorage.getItem("raspored-" + odeljenje));
+	if (odeljenjeRaspored != null) {
+		return odeljenjeRaspored;
+	} else {
+		return defaultRaspored[odeljenje];
+	}
 }
 
 export function setRaspored(odeljenje, raspored) {
